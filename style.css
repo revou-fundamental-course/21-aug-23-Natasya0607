@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lobster', cursive;
+    overflow-x: hidden;
+    min-height: 2000px;
+}
+
+nav {
+    display: flex;
+    background-color: salmon ;
+    justify-content: space-around;
+    padding: 20px 0;
+    color: rgb(156, 65, 55) ;
+    align-items: center;
+}
+
+nav .logo {
+    font-family: 'Noto Sans', sans-serif;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 30%;
+    justify-content: space-between;
+}
+
+nav ul li a {
+    color: rgb(156, 65, 55);
+    text-decoration: none ;
+    font-size: 1em;
+}
+
+
+nav ul li a:hover {
+    color: rgb(176, 77, 66);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px; 
+    height: 3px;
+    background-color: brown;
+    border-radius: 4px;
+    transition: all 0.5s;
+}
+
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: black;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    background-color: black;
+    transform: rotate(-45deg) translate(-1px, 0); 
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0); 
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .menu-toggle{
+        display: flex;
+    }
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 100px;
+        width: 60%;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color:  salmon;
+        z-index: -1;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    nav ul.slide {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.image-container {
+    margin: 10px 5px 20px;
+    width: 100px; 
+    height: 100px; 
+    overflow: hidden; 
+}
+
+.image-container img {
+    width: 100%; 
+    height: auto; 
+}
+
+/* Gaya untuk konten */
+.content {
+    max-width: 1500px;
+    margin: auto;
+    padding: 2rem;
+    background-color: white;
+    border: 0px solid #ccc;
+}
+
+.content h2 {
+    color: #000000;
+    margin-bottom: 1rem;
+    font-family: 'EB Garamond', serif;
+}
+
+.content p {
+    color: #000000;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    font-family: 'Bitter', serif;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.keahlian {
+   flex-wrap: wrap;
+   float: left;
+   margin: 3em;
+}
+
+.facilitation-titlea {
+    float: auto;
+    padding-left: 0.3rem;
+    font-family: 'Bitter', serif;
+}
+
+.facilitation-title {
+    float: auto;
+    padding-left: 2rem;
+    font-family: 'Bitter', serif;
+}
+
+.facilitation-titlec {
+    float: auto;
+    padding-left: 1rem;
+    font-family: 'Bitter', serif;
+}
+
+.facilitation-img{
+    border-radius: 50%;
+    width:120px;
+    height: 120px;
+}
+
+
+.kontak {
+    float: none;
+    padding: 0.89em;
+    top: 100px;
+}
+
+.input-group {
+    width: 100%;
+    font-size: 1.7rem;
+    background: none;
+    color: black;
+}
+
+.btn {
+    margin-top: 3rem;
+    display: inline-block;
+    padding: 0rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
